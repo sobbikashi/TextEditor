@@ -34,7 +34,7 @@
             this.btnOpenfile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numFont = new System.Windows.Forms.NumericUpDown();
-            this.tbContent = new System.Windows.Forms.TextBox();
+            this.fldContent = new System.Windows.Forms.TextBox();
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -112,17 +112,17 @@
             0,
             0});
             // 
-            // tbContent
+            // fldContent
             // 
-            this.tbContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.fldContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbContent.Location = new System.Drawing.Point(39, 108);
-            this.tbContent.Multiline = true;
-            this.tbContent.Name = "tbContent";
-            this.tbContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbContent.Size = new System.Drawing.Size(1009, 448);
-            this.tbContent.TabIndex = 6;
+            this.fldContent.Location = new System.Drawing.Point(39, 108);
+            this.fldContent.Multiline = true;
+            this.fldContent.Name = "fldContent";
+            this.fldContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.fldContent.Size = new System.Drawing.Size(1009, 448);
+            this.fldContent.TabIndex = 6;
             // 
             // btnSaveFile
             // 
@@ -163,7 +163,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 647);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnSaveFile);
-            this.Controls.Add(this.tbContent);
+            this.Controls.Add(this.fldContent);
             this.Controls.Add(this.numFont);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnOpenfile);
@@ -188,7 +188,7 @@
         private System.Windows.Forms.Button btnOpenfile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numFont;
-        private System.Windows.Forms.TextBox tbContent;
+        private System.Windows.Forms.TextBox fldContent;
         private System.Windows.Forms.Button btnSaveFile;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

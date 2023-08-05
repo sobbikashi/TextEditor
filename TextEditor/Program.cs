@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DfEditor;
+using System;
 using System.Windows.Forms;
+using TextEditor.BL;
 
 namespace TextEditor
 {
@@ -16,7 +15,14 @@ namespace TextEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm form = new MainForm();
+            MessageService service = new MessageService();
+            FileManager manager = new FileManager();
+
+            MainPresenter presenter = new MainPresenter(form, manager, service);
+
+            Application.Run(form);
         }
     }
 }

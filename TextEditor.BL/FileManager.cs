@@ -3,7 +3,18 @@ using System.Text;
 
 namespace TextEditor.BL
 {
-    public class FileManager
+    public interface IFileManager
+    {
+        string GetContent(string filePath);
+        string GetContent(string filePath, Encoding encoding);
+        void SaveContent(string content, string filePath);
+        void SaveContent(string content, string filePath, Encoding encoding);
+        int GetSymbolCount(string content);
+        bool IsExist(string filePath);
+    }
+        
+
+    public class FileManager : IFileManager
     {
         private readonly Encoding _defaultEncoding = Encoding.GetEncoding(1251);
         //устанаваливаем дефолтную виндовскую кодировку
@@ -12,7 +23,6 @@ namespace TextEditor.BL
            bool isExist = File.Exists(filePath);
             return isExist;
         }
-
         public string GetContent(string filePath)
         {
             return GetContent(filePath, _defaultEncoding);
@@ -33,14 +43,12 @@ namespace TextEditor.BL
             File.WriteAllText(filePath, content, encoding);
         }
 
-        public int GetSymbolcount(string content)
+        public int GetSymbolCount(string content)
         {
             int count = content.Length;
             return count;
 
         }
-
     }
-
 
 }
