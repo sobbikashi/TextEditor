@@ -5,16 +5,16 @@ using System.Windows.Forms;
 namespace TextEditor
 
 {
-    public interface IMainForm
+    public interface IMainForm<T>
     {
-        string FilePath { get; }
+        T FilePath { get; }
         string Content { get; set; }
         void SetSybmolCount(int count);
         event EventHandler FileOpenClick;
         event EventHandler FileSaveClick;
         event EventHandler ContentChanged;
     }
-    public partial class MainForm : Form, IMainForm
+    public partial class MainForm : Form, IMainForm<string>
     {
         public MainForm()
         {

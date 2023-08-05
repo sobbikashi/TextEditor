@@ -4,14 +4,14 @@ using TextEditor.BL;
 
 namespace TextEditor
 {
-    public class MainPresenter
+    public class MainPresenter<T>
     {
-        private readonly IMainForm _view;
-        private readonly IFileManager _manager;
+        private readonly IMainForm<T> _view;
+        private readonly IFileManager<T> _manager;
         private readonly IMessageService _messageService;
-        private string _currentFilePath;
+        private T _currentFilePath;
 
-        public MainPresenter(IMainForm view, IFileManager manager, IMessageService service)
+        public MainPresenter(IMainForm<T> view, IFileManager<T> manager, IMessageService service)
         {
             _view = view;
             _manager = manager;
@@ -41,7 +41,7 @@ namespace TextEditor
         {
             try
             {
-                string filePath = _view.FilePath;
+                T filePath = _view.FilePath;
                 bool isExist = _manager.IsExist(filePath);
                 if (!isExist)
                 {
